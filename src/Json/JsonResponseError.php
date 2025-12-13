@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json;
 
+use InvalidArgumentException;
 use Jder\Psr\Json\ResponseErrorCode;
 
 /**
@@ -88,19 +89,19 @@ class JsonResponseError
     public function fromJsonObject(mixed $json): static
     {
         if (!is_object($json)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 "Expected JSON object, received " . gettype($json),
             );
         }
 
         if (!isset($json->code)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 "Missing `code` key in JSON object",
             );
         }
 
         if (!is_string($json->code)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 "Expected `code` to be string, received " .
                     gettype($json->code),
             );
@@ -110,7 +111,7 @@ class JsonResponseError
 
         if (isset($json->path)) {
             if (!is_array($json->path)) {
-                throw new \InvalidArgumentException(
+                throw new InvalidArgumentException(
                     "Expected `path` to be array, received " .
                         gettype($json->path),
                 );
@@ -118,7 +119,7 @@ class JsonResponseError
 
             foreach ($json->path as $value) {
                 if (!is_string($value)) {
-                    throw new \InvalidArgumentException(
+                    throw new InvalidArgumentException(
                         "Expected `path` to be array of strings, received " .
                             gettype($value),
                     );
@@ -132,7 +133,7 @@ class JsonResponseError
 
         if (isset($json->message)) {
             if (!is_string($json->message)) {
-                throw new \InvalidArgumentException(
+                throw new InvalidArgumentException(
                     "Expected `message` to be string, received " .
                         gettype($json->message),
                 );

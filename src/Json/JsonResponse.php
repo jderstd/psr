@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json;
 
+use InvalidArgumentException;
 use Jder\Psr\Json\JsonResponseError;
 
 /**
@@ -106,13 +107,13 @@ class JsonResponse
     public function fromJsonObject(mixed $json): static
     {
         if (!is_object($json)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 "Expected JSON object, received " . gettype($json),
             );
         }
 
         if (!isset($json->success)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 "Missing `success` key in JSON object",
             );
         }
