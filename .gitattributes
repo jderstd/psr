@@ -12,6 +12,7 @@
 /.gitignore export-ignore
 /.ls-lint.yml export-ignore
 /.typos.toml export-ignore
+/CHANGELOG.md export-ignore
 /composer.lock export-ignore
 /justfile export-ignore
 /package.json export-ignore
