@@ -25,7 +25,7 @@ function route(
     Request $request,
     Response $response
 ): Response {
-    return CreateJsonResponse::success($response)->toResponse();
+    return CreateJsonResponse::success($response)->create();
 }
 ```
 
@@ -52,7 +52,7 @@ function route(
 ): Response {
     return CreateJsonResponse::success($response)
         ->setData("Hello, World!")
-        ->toResponse();
+        ->create();
 }
 ```
 
@@ -84,7 +84,7 @@ function route(
 
     return CreateJsonResponse::failure($response)
         ->addError($err)
-        ->toResponse();
+        ->create();
 }
 ```
 
@@ -116,7 +116,7 @@ function route(
 ): Response {
     return new CreateResponse($response)
         ->setBody("Hello, World!")
-        ->toResponse();
+        ->create();
 }
 ```
 

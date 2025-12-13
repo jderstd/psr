@@ -21,7 +21,7 @@ class TestJsonResponse extends TestCase
             ->setData([
                 "message" => $msg,
             ])
-            ->toResponse();
+            ->create();
 
         $this->assertInstanceOf(Response::class, $res);
 
@@ -44,7 +44,7 @@ class TestJsonResponse extends TestCase
 
         $res = CreateJsonResponse::failure(new MockResponse())
             ->addError($err)
-            ->toResponse();
+            ->create();
 
         $this->assertInstanceOf(Response::class, $res);
 

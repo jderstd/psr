@@ -17,7 +17,7 @@ $app->get("/", function (
     Response $response,
     $args,
 ): Response {
-    return CreateJsonResponse::success($response)->toResponse();
+    return CreateJsonResponse::success($response)->create();
 });
 
 $app->get("/hello", function (
@@ -29,7 +29,7 @@ $app->get("/hello", function (
         ->setData([
             "message" => "Hello, World!",
         ])
-        ->toResponse();
+        ->create();
 });
 
 $app->get("/server", function (
@@ -66,7 +66,7 @@ $errorHandler = function (
     return CreateJsonResponse::failure($response)
         ->setStatus($status)
         ->addError($error)
-        ->toResponse();
+        ->create();
 };
 
 $errorMiddleware->setDefaultErrorHandler($errorHandler);

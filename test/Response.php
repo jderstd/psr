@@ -17,7 +17,7 @@ class TestResponse extends TestCase
 
         $res = (new CreateResponse(new MockResponse()))
             ->setBody($body)
-            ->toResponse();
+            ->create();
 
         $this->assertInstanceOf(Response::class, $res);
 

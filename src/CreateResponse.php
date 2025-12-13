@@ -43,9 +43,9 @@ class CreateResponse extends CreateResponseBase
     }
 
     /**
-     * Turn the class into a response.
+     * Finish the response creation.
      */
-    public function toResponse(): Response
+    public function create(): Response
     {
         // check if stream
         if (is_string($this->body)) {

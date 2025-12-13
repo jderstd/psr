@@ -24,9 +24,9 @@ class CreateJsonResponseFunctionBase extends CreateResponseBase
     }
 
     /**
-     * Turn the class into a response.
+     * Finish the response creation.
      */
-    public function toResponse(): Response
+    public function create(): Response
     {
         $this->response = $this->response->withHeader(
             "Content-Type",

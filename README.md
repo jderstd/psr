@@ -17,7 +17,7 @@ function route(
     Request $request,
     Response $response
 ): Response {
-    return CreateJsonResponse::success($response)->toResponse();
+    return CreateJsonResponse::success($response)->create();
 }
 ```
 
