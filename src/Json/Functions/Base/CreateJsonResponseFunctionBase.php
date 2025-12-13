@@ -33,7 +33,7 @@ class CreateJsonResponseFunctionBase extends CreateResponseBase
             "application/json",
         );
 
-        $json = json_encode($this->json->toJsonObject());
+        $json = json_encode($this->json);
 
         if (!$json) {
             $this->response = $this->response->withStatus(500);

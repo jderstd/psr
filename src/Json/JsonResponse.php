@@ -20,11 +20,47 @@ class JsonResponse
     /** @var array<JsonResponseError> */
     public array $errors;
 
-    public function __construct()
+    final public function __construct()
     {
         $this->success = true;
         $this->data = null;
         $this->errors = [];
+    }
+
+    /**
+     * Create the class from an object.
+     */
+    public static function fromObject(mixed $json): static
+    {
+        if (!is_object($json)) {
+            throw new InvalidArgumentException(
+                "Expected JSON object, received " . gettype($json),
+            );
+        }
+
+        if (!isset($json->success)) {
+            throw new InvalidArgumentException(
+                "Missing `success` key in JSON object",
+            );
+        }
+
+        $success = (bool) $json->success;
+
+        $data = $json->data ?? null;
+
+        $errors = [];
+
+        if (!empty($json->errors) && is_array($json->errors)) {
+            foreach ($json->errors as $errorJson) {
+                $error = JsonResponseError::fromObject($errorJson);
+                $errors[] = $error;
+            }
+        }
+
+        return (new static())
+            ->setSuccess($success)
+            ->setData($data)
+            ->addErrors($errors);
     }
 
     /**
@@ -99,63 +135,5 @@ class JsonResponse
         $this->errors[] = $error;
 
         return $this;
-    }
-
-    /**
-     * Create the class from a JSON object.
-     */
-    public function fromJsonObject(mixed $json): static
-    {
-        if (!is_object($json)) {
-            throw new InvalidArgumentException(
-                "Expected JSON object, received " . gettype($json),
-            );
-        }
-
-        if (!isset($json->success)) {
-            throw new InvalidArgumentException(
-                "Missing `success` key in JSON object",
-            );
-        }
-
-        $this->success = (bool) $json->success;
-
-        $this->data = $json->data ?? null;
-
-        $this->errors = [];
-
-        if (!empty($json->errors) && is_array($json->errors)) {
-            foreach ($json->errors as $errorJson) {
-                $error = new JsonResponseError();
-                $error->fromJsonObject($errorJson);
-                $this->errors[] = $error;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Turn the class into a JSON object.
-     * @return array<string,mixed>
-     */
-    public function toJsonObject(): array
-    {
-        $errs = [];
-
-        foreach ($this->errors as $error) {
-            $errs[] = $error->toJsonObject();
-        }
-
-        $data = [
-            "success" => $this->success,
-            "data" => $this->data,
-            "errors" => $errs,
-        ];
-
-        return array_filter(
-            $data,
-            static fn($value) => $value !== null && $value !== [],
-        );
     }
 }

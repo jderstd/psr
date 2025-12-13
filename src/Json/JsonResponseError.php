@@ -20,11 +20,78 @@ class JsonResponseError
 
     public ?string $message;
 
-    public function __construct()
+    final public function __construct()
     {
         $this->code = ResponseErrorCode::Unknown->value;
         $this->path = [];
         $this->message = null;
+    }
+
+    /**
+     * Create the class from an object.
+     */
+    public static function fromObject(mixed $json): static
+    {
+        if (!is_object($json)) {
+            throw new InvalidArgumentException(
+                "Expected JSON object, received " . gettype($json),
+            );
+        }
+
+        if (!isset($json->code)) {
+            throw new InvalidArgumentException(
+                "Missing `code` key in JSON object",
+            );
+        }
+
+        if (!is_string($json->code)) {
+            throw new InvalidArgumentException(
+                "Expected `code` to be string, received " .
+                    gettype($json->code),
+            );
+        }
+
+        $code = $json->code;
+
+        $path = [];
+
+        $message = null;
+
+        if (isset($json->path)) {
+            if (!is_array($json->path)) {
+                throw new InvalidArgumentException(
+                    "Expected `path` to be array, received " .
+                        gettype($json->path),
+                );
+            }
+
+            foreach ($json->path as $value) {
+                if (!is_string($value)) {
+                    throw new InvalidArgumentException(
+                        "Expected `path` to be array of strings, received " .
+                            gettype($value),
+                    );
+                }
+
+                $path[] = $value;
+            }
+        }
+
+        if (isset($json->message)) {
+            if (!is_string($json->message)) {
+                throw new InvalidArgumentException(
+                    "Expected `message` to be string, received " .
+                        gettype($json->message),
+                );
+            }
+
+            $message = $json->message;
+        }
+
+        return (new static())
+            ->setCode($code)
+            ->setPath($path)
+            ->setMessage($message);
     }
 
     /**
@@ -49,7 +116,7 @@ class JsonResponseError
      * Indicates where the error occurred.
      * @return array<string>
      */
-    public function getPath(): ?array
+    public function getPath(): array
     {
         return $this->path;
     }
@@ -81,87 +148,5 @@ class JsonResponseError
         $this->message = $message;
 
         return $this;
-    }
-
-    /**
-     * Create the class from a JSON object.
-     */
-    public function fromJsonObject(mixed $json): static
-    {
-        if (!is_object($json)) {
-            throw new InvalidArgumentException(
-                "Expected JSON object, received " . gettype($json),
-            );
-        }
-
-        if (!isset($json->code)) {
-            throw new InvalidArgumentException(
-                "Missing `code` key in JSON object",
-            );
-        }
-
-        if (!is_string($json->code)) {
-            throw new InvalidArgumentException(
-                "Expected `code` to be string, received " .
-                    gettype($json->code),
-            );
-        }
-
-        $this->code = $json->code;
-
-        if (isset($json->path)) {
-            if (!is_array($json->path)) {
-                throw new InvalidArgumentException(
-                    "Expected `path` to be array, received " .
-                        gettype($json->path),
-                );
-            }
-
-            foreach ($json->path as $value) {
-                if (!is_string($value)) {
-                    throw new InvalidArgumentException(
-                        "Expected `path` to be array of strings, received " .
-                            gettype($value),
-                    );
-                }
-
-                $this->path[] = $value;
-            }
-        } else {
-            $this->path = [];
-        }
-
-        if (isset($json->message)) {
-            if (!is_string($json->message)) {
-                throw new InvalidArgumentException(
-                    "Expected `message` to be string, received " .
-                        gettype($json->message),
-                );
-            }
-
-            $this->message = $json->message;
-        } else {
-            $this->message = null;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Turn the class into a JSON object.
-     * @return array<string,mixed>
-     */
-    public function toJsonObject(): array
-    {
-        $data = [
-            "code" => $this->code,
-            "path" => $this->path,
-            "message" => $this->message,
-        ];
-
-        return array_filter(
-            $data,
-            static fn($value) => $value !== null && $value !== [],
-        );
     }
 }
