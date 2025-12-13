@@ -13,6 +13,8 @@ Please install the following dependencies:
 | Dependencies                                   | Description                            |
 | ---------------------------------------------- | -------------------------------------- |
 | [PHP](https://www.php.net/)                    | PHP interpreter                        |
+| [Composer](https://getcomposer.org/)           | Dependency Manager for PHP             |
+| [pnpm](https://pnpm.io/)                       | Package manager for Node.js            |
 | [just](https://just.systems)                   | Command runner                         |
 | [ls-lint](https://ls-lint.org/)                | Linting tool for directories and files |
 | [typos-cli](https://github.com/crate-ci/typos) | Spell checker                          |
