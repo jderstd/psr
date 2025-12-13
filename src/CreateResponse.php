@@ -1,0 +1,59 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Jder\Psr;
+
+use Psr\Http\Message\StreamInterface as Stream;
+use Psr\Http\Message\ResponseInterface as Response;
+use Jder\Psr\Base\CreateResponseBase;
+
+/**
+ * Function to create response.
+ * @api
+ */
+class CreateResponse extends CreateResponseBase
+{
+    /** @var string|Stream */
+    protected mixed $body;
+
+    public function __construct(Response $response)
+    {
+        parent::__construct($response);
+    }
+
+    /**
+     * Set response body.
+     * @param string|Stream $body
+     */
+    public function setBody(mixed $body): static
+    {
+        $this->body = $body;
+
+        return $this;
+    }
+
+    /**
+     * Get response body.
+     * @return string|Stream
+     */
+    public function getBody(): mixed
+    {
+        return $this->body;
+    }
+
+    /**
+     * Turn the class into a response.
+     */
+    public function toResponse(): Response
+    {
+        // check if stream
+        if (is_string($this->body)) {
+            $this->response->getBody()->write($this->body);
+        } else {
+            $this->response = $this->response->withBody($this->body);
+        }
+
+        return $this->response;
+    }
+}

@@ -1,0 +1,13 @@
+ls:
+    src/*:
+        .dir: PascalCase
+        .php: PascalCase
+
+ignore:
+    - .git
+    - .github
+    - __MACOSX
+    - "**/__MACOSX"
+    - .DS_Store
+    - "**/.DS_Store"
+    - vendor
