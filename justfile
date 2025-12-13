@@ -51,3 +51,8 @@ test:
 # Start example server
 example:
     php -S localhost:4001 ./{{example}}
+
+# Clean modules
+clean:
+    rm -rf ./node_modules
+    rm -rf ./vendor

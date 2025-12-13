@@ -31,8 +31,13 @@ And the response will be shown as below:
 
 ## Documentation
 
-For the documentation,
-please refer to the [documentation](https://github.com/jderstd/psr/blob/main/docs/README.md).
+For the documentation,please refer to the 
+[documentation](https://github.com/jderstd/psr/blob/main/docs/README.md).
+
+## Contributing
+
+For contributing, please refer to the 
+[contributing guide](https://github.com/jderstd/psr/blob/main/CONTRIBUTING.md).
 
 ## License
 
