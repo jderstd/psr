@@ -4,7 +4,7 @@
 # Excluded directories from Packagist
 /.github export-ignore
 /docs export-ignore
-/example export-ignore
+/examples export-ignore
 /test export-ignore
 
 # Excluded files from Packagist
