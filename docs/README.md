@@ -23,7 +23,7 @@ use Jder\Psr\Json\CreateJsonResponse;
 
 function route(
     Request $request,
-    Response $response
+    Response $response,
 ): Response {
     return CreateJsonResponse::success($response)->create();
 }
@@ -33,7 +33,9 @@ And the response will be shown as below:
 
 ```json
 {
-    "success": true
+    "success": true,
+    "data": null,
+    "errors": []
 }
 ```
 
@@ -48,7 +50,7 @@ use Jder\Psr\Json\CreateJsonResponse;
 
 function route(
     Request $request,
-    Response $response
+    Response $response,
 ): Response {
     return CreateJsonResponse::success($response)
         ->setData("Hello, World!")
@@ -61,7 +63,8 @@ And the response will be shown as below:
 ```json
 {
     "success": true,
-    "data": "Hello, World!"
+    "data": "Hello, World!",
+    "errors": []
 }
 ```
 
@@ -77,7 +80,7 @@ use Jder\Psr\Json\JsonResponseError;
 
 function route(
     Request $request,
-    Response $response
+    Response $response,
 ): Response {
     $err = new JsonResponseError()
         ->setCode("server");
@@ -93,6 +96,7 @@ And the response will be shown as below:
 ```json
 {
     "success": false,
+    "data": null,
     "errors": [
         {
             "code": "server"
@@ -112,7 +116,7 @@ use Jder\Psr\CreateResponse;
 
 function route(
     Request $request,
-    Response $response
+    Response $response,
 ): Response {
     return new CreateResponse($response)
         ->setBody("Hello, World!")

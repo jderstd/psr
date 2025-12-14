@@ -4,6 +4,14 @@ A response builder for PSR.
 
 This package includes different response builders based on the JSON response structure specified in [JSON Data Errors Response (JDER)](https://github.com/jderstd/spec). With the builders, various kinds of responses can be created easily instead of sending plain text responses.
 
+## Installation
+
+Install this package as a dependency in the project:
+
+```sh
+composer require jder/psr
+```
+
 ## Quick Start
 
 To create a JSON response, use the following code:
@@ -15,7 +23,7 @@ use Jder\Psr\Json\CreateJsonResponse;
 
 function route(
     Request $request,
-    Response $response
+    Response $response,
 ): Response {
     return CreateJsonResponse::success($response)->create();
 }
@@ -25,7 +33,9 @@ And the response will be shown as below:
 
 ```json
 {
-    "success": true
+    "success": true,
+    "data": null,
+    "errors": []
 }
 ```
 
