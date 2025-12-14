@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
+use Slim\Factory\AppFactory;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use Slim\Factory\AppFactory;
 use Jder\Psr\Json\CreateJsonResponse;
 use Jder\Psr\Json\JsonResponseError;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Exception\HttpInternalServerErrorException;
 
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . "/../../vendor/autoload.php";
 
 $app = AppFactory::create();
 
@@ -50,6 +52,8 @@ $errorHandler = function (
     Request $request,
     Throwable $exception,
     bool $displayErrorDetails,
+    bool $logErrors,
+    bool $logErrorDetails,
 ) use ($app): Response {
     $response = $app->getResponseFactory()->createResponse();
 

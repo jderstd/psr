@@ -12,7 +12,8 @@ phpcs := vendor_bin + "phpcs"
 psalm := vendor_bin + "psalm"
 phpunit := vendor_bin + "phpunit"
 
-example := "example/index.php"
+example_php := "examples/php/index.php"
+example_slim := "examples/slim/index.php"
 
 # Default action
 _:
@@ -41,7 +42,7 @@ lint:
 # Format code
 fmt:
     ./{{prettier}} ./src/* --write
-    ./{{prettier}} ./example/* --write
+    ./{{prettier}} ./examples/* --write
     ./{{prettier}} ./test/* --write
 
 # Run tests
@@ -50,7 +51,11 @@ test:
 
 # Start example server
 example:
-    php -S localhost:4001 ./{{example}}
+    php -S localhost:4001 ./{{example_php}}
+
+# Start Slim example server
+example-slim:
+    php -S localhost:4001 ./{{example_slim}}
 
 # Clean modules
 clean:
