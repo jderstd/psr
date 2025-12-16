@@ -56,8 +56,10 @@ class JsonResponseError implements JsonSerializable
 
         $code = $json->code;
 
+        /** @var list<string> */
         $path = [];
 
+        /** @var ?string */
         $message = null;
 
         if (isset($json->path)) {

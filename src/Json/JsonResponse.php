@@ -51,6 +51,7 @@ class JsonResponse implements JsonSerializable
 
         $data = $json->data ?? null;
 
+        /** @var array<JsonResponseError> */
         $errors = [];
 
         if (!empty($json->errors) && is_array($json->errors)) {
