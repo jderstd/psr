@@ -11,6 +11,7 @@ use Jder\Psr\Json\ResponseErrorCode;
 
 /**
  * JSON response error.
+ *
  * @api
  */
 class JsonResponseError implements JsonSerializable
@@ -116,6 +117,7 @@ class JsonResponseError implements JsonSerializable
 
     /**
      * Indicates where the error occurred.
+     *
      * @return array<string>
      */
     public function getPath(): array
@@ -125,6 +127,7 @@ class JsonResponseError implements JsonSerializable
 
     /**
      * Set where the error occurred.
+     *
      * @param list<string> $path
      */
     public function setPath(array $path): static

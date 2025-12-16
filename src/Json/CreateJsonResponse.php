@@ -10,6 +10,7 @@ use Jder\Psr\Json\Functions\CreateJsonSuccessResponseFunctions;
 
 /**
  * Function to create JSON response.
+ *
  * @api
  */
 class CreateJsonResponse

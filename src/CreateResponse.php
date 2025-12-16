@@ -10,6 +10,7 @@ use Jder\Psr\Base\CreateResponseBase;
 
 /**
  * Function to create response.
+ *
  * @api
  */
 class CreateResponse extends CreateResponseBase
@@ -24,6 +25,7 @@ class CreateResponse extends CreateResponseBase
 
     /**
      * Set response body.
+     *
      * @param string|Stream $body
      */
     public function setBody(mixed $body): static
@@ -35,6 +37,7 @@ class CreateResponse extends CreateResponseBase
 
     /**
      * Get response body.
+     *
      * @return string|Stream
      */
     public function getBody(): mixed

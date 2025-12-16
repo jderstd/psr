@@ -22,6 +22,7 @@ class CreateJsonFailureResponseFunctions extends CreateJsonResponseFunctionBase
 
     /**
      * A list of errors for the response when `success` is `false`.
+     *
      * @return array<JsonResponseError>
      */
     public function getErrors(): array
@@ -39,6 +40,7 @@ class CreateJsonFailureResponseFunctions extends CreateJsonResponseFunctionBase
 
     /**
      * Add a list of errors to the response.
+     *
      * @param array<JsonResponseError> $errors
      */
     public function addErrors(array $errors): static

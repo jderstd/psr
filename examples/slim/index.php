@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use Slim\Factory\AppFactory;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Json\CreateJsonResponse;
 use Jder\Psr\Json\JsonResponseError;
-use Slim\Exception\HttpNotFoundException;
 use Slim\Exception\HttpInternalServerErrorException;
+use Slim\Exception\HttpNotFoundException;
+use Slim\Factory\AppFactory;
 
 require __DIR__ . "/../../vendor/autoload.php";
 

@@ -45,6 +45,7 @@ class CreateResponseBase
 
     /**
      * Get response headers.
+     *
      * @return array<array<string>>
      */
     public function getHeaders(): array
@@ -54,6 +55,7 @@ class CreateResponseBase
 
     /**
      * Get specific response header.
+     *
      * @return string[]
      */
     public function getHeader(string $name): array
@@ -63,6 +65,7 @@ class CreateResponseBase
 
     /**
      * Set response headers.
+     *
      * @param array<string,string|string[]> $headers
      */
     public function addHeaders(array $headers): static
@@ -79,6 +82,7 @@ class CreateResponseBase
 
     /**
      * Set response header.
+     *
      * @param string $name
      * @param string|string[] $value
      */

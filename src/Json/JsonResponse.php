@@ -11,6 +11,7 @@ use Jder\Psr\Json\JsonResponseError;
 
 /**
  * JSON response.
+ *
  * @api
  */
 class JsonResponse implements JsonSerializable
@@ -103,6 +104,7 @@ class JsonResponse implements JsonSerializable
 
     /**
      * A list of errors for the response when `success` is `false`.
+     *
      * @return array<JsonResponseError>
      */
     public function getErrors(): array
@@ -134,6 +136,7 @@ class JsonResponse implements JsonSerializable
 
     /**
      * Add a list of errors to the response.
+     *
      * @param array<JsonResponseError> $errors
      */
     public function addErrors(array $errors): static
