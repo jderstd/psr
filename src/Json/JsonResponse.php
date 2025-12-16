@@ -119,6 +119,20 @@ class JsonResponse implements JsonSerializable
     }
 
     /**
+     * Set the list of errors for the response.
+     *
+     * This function will overwrite any existing errors.
+     *
+     * @param array<JsonResponseError> $errors
+     */
+    public function setErrors(array $errors): static
+    {
+        $this->errors = $errors;
+
+        return $this;
+    }
+
+    /**
      * Add a list of errors to the response.
      * @param array<JsonResponseError> $errors
      */
