@@ -5,20 +5,22 @@ declare(strict_types=1);
 namespace Jder\Psr\Json;
 
 use InvalidArgumentException;
+use JsonSerializable;
+use Override;
 use Jder\Psr\Json\JsonResponseError;
 
 /**
  * JSON response.
  * @api
  */
-class JsonResponse
+class JsonResponse implements JsonSerializable
 {
-    public bool $success;
+    protected bool $success;
 
-    public mixed $data;
+    protected mixed $data;
 
     /** @var array<JsonResponseError> */
-    public array $errors;
+    protected array $errors;
 
     final public function __construct()
     {
@@ -135,5 +137,18 @@ class JsonResponse
         $this->errors[] = $error;
 
         return $this;
+    }
+
+    /**
+     * Serialize the class to JSON.
+     */
+    #[Override]
+    public function jsonSerialize(): mixed
+    {
+        return [
+            "success" => $this->success,
+            "data" => $this->data,
+            "errors" => $this->errors,
+        ];
     }
 }

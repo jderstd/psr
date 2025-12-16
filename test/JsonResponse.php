@@ -53,7 +53,7 @@ class TestJsonResponse extends TestCase
             json_decode($res->getBody()->__toString()),
         );
 
-        $this->assertSame(false, $result->success);
+        $this->assertSame(false, $result->getSuccess());
 
         $resultErr = $result->getError();
 
