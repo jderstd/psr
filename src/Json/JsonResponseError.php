@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Jder\Psr\Json;
 
 use InvalidArgumentException;
+use Jder\Psr\Json\ResponseErrorCode;
 use JsonSerializable;
 use Override;
-use Jder\Psr\Json\ResponseErrorCode;
 
 /**
  * JSON response error.
@@ -49,8 +49,8 @@ class JsonResponseError implements JsonSerializable
 
         if (!is_string($json->code)) {
             throw new InvalidArgumentException(
-                "Expected `code` to be string, received " .
-                    gettype($json->code),
+                "Expected `code` to be string, received "
+                    . gettype($json->code),
             );
         }
 
@@ -65,16 +65,16 @@ class JsonResponseError implements JsonSerializable
         if (isset($json->path)) {
             if (!is_array($json->path)) {
                 throw new InvalidArgumentException(
-                    "Expected `path` to be array, received " .
-                        gettype($json->path),
+                    "Expected `path` to be array, received "
+                        . gettype($json->path),
                 );
             }
 
             foreach ($json->path as $value) {
                 if (!is_string($value)) {
                     throw new InvalidArgumentException(
-                        "Expected `path` to be array of strings, received " .
-                            gettype($value),
+                        "Expected `path` to be array of strings, received "
+                            . gettype($value),
                     );
                 }
 
@@ -85,8 +85,8 @@ class JsonResponseError implements JsonSerializable
         if (isset($json->message)) {
             if (!is_string($json->message)) {
                 throw new InvalidArgumentException(
-                    "Expected `message` to be string, received " .
-                        gettype($json->message),
+                    "Expected `message` to be string, received "
+                        . gettype($json->message),
                 );
             }
 

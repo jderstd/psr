@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Json\CreateJsonResponse;
 use Jder\Psr\Json\JsonResponseError;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpInternalServerErrorException;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Factory\AppFactory;
@@ -14,30 +14,26 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 $app = AppFactory::create();
 
-$app->get("/", function (
-    Request $request,
+$app->get("/", fn(
+    Request $_request,
     Response $response,
-    $args,
-): Response {
-    return CreateJsonResponse::success($response)->create();
-});
+    $_args,
+): Response => CreateJsonResponse::success($response)->create());
 
-$app->get("/hello", function (
-    Request $request,
+$app->get("/hello", fn(
+    Request $_request,
     Response $response,
-    $args,
-): Response {
-    return CreateJsonResponse::success($response)
-        ->setData([
-            "message" => "Hello, World!",
-        ])
-        ->create();
-});
+    $_args,
+): Response => CreateJsonResponse::success($response)
+    ->setData([
+        "message" => "Hello, World!",
+    ])
+    ->create());
 
 $app->get("/server", function (
     Request $request,
-    Response $response,
-    $args,
+    Response $_response,
+    $_args,
 ): Response {
     throw new HttpInternalServerErrorException($request);
 });
@@ -49,11 +45,11 @@ $errorMiddleware = $app->addErrorMiddleware(
 );
 
 $errorHandler = function (
-    Request $request,
+    Request $_request,
     Throwable $exception,
-    bool $displayErrorDetails,
-    bool $logErrors,
-    bool $logErrorDetails,
+    bool $_displayErrorDetails,
+    bool $_logErrors,
+    bool $_logErrorDetails,
 ) use ($app): Response {
     $response = $app->getResponseFactory()->createResponse();
 

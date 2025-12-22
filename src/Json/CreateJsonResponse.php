@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json;
 
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Json\Functions\CreateJsonFailureResponseFunctions;
 use Jder\Psr\Json\Functions\CreateJsonSuccessResponseFunctions;
+use Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * Function to create JSON response.
@@ -15,15 +15,13 @@ use Jder\Psr\Json\Functions\CreateJsonSuccessResponseFunctions;
  */
 class CreateJsonResponse
 {
-    public static function success(
-        Response $response,
-    ): CreateJsonSuccessResponseFunctions {
+    public static function success(Response $response): CreateJsonSuccessResponseFunctions
+    {
         return new CreateJsonSuccessResponseFunctions($response);
     }
 
-    public static function failure(
-        Response $response,
-    ): CreateJsonFailureResponseFunctions {
+    public static function failure(Response $response): CreateJsonFailureResponseFunctions
+    {
         return new CreateJsonFailureResponseFunctions($response);
     }
 }

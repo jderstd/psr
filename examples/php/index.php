@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Nyholm\Psr7\Factory\Psr17Factory;
-use Nyholm\Psr7Server\ServerRequestCreator;
 use Jder\Psr\Json\CreateJsonResponse;
 use Jder\Psr\Json\JsonResponseError;
+use Nyholm\Psr7\Factory\Psr17Factory;
+use Nyholm\Psr7Server\ServerRequestCreator;
 
 require __DIR__ . "/../../vendor/autoload.php";
 
@@ -22,15 +22,15 @@ $method = $request->getMethod();
 $path = $request->getUri()->getPath();
 
 try {
-    if ($method === "GET" && $path === "/") {
+    if ("GET" === $method && "/" === $path) {
         $response = CreateJsonResponse::success($response)->create();
-    } elseif ($method === "GET" && $path === "/hello") {
+    } elseif ("GET" === $method && "/hello" === $path) {
         $response = CreateJsonResponse::success($response)
             ->setData([
                 "message" => "Hello, World!",
             ])
             ->create();
-    } elseif ($method === "GET" && $path === "/server") {
+    } elseif ("GET" === $method && "/server" === $path) {
         throw new RuntimeException("Internal server error", 500);
     } else {
         throw new RuntimeException("Not found", 404);
@@ -40,7 +40,7 @@ try {
 
     $error = new JsonResponseError();
 
-    if ($status === 404) {
+    if (404 === $status) {
         $error->setCode("not_found")->setMessage("Content not found");
     } else {
         $error->setCode("server")->setMessage("Internal server error");

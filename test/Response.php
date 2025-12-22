@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Test;
 
-use PHPUnit\Framework\TestCase;
-use Nyholm\Psr7\Response as MockResponse;
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\CreateResponse;
+use Nyholm\Psr7\Response as MockResponse;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface as Response;
 
 class TestResponse extends TestCase
 {
@@ -19,8 +19,8 @@ class TestResponse extends TestCase
             ->setBody($body)
             ->create();
 
-        $this->assertInstanceOf(Response::class, $res);
+        static::assertInstanceOf(Response::class, $res);
 
-        $this->assertSame($body, (string) $res->getBody());
+        static::assertSame($body, (string) $res->getBody());
     }
 }

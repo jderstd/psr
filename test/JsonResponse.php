@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Test;
 
-use PHPUnit\Framework\TestCase;
-use Nyholm\Psr7\Response as MockResponse;
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Json\CreateJsonResponse;
 use Jder\Psr\Json\JsonResponse;
 use Jder\Psr\Json\JsonResponseError;
+use Nyholm\Psr7\Response as MockResponse;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface as Response;
 
 class TestJsonResponse extends TestCase
 {
@@ -23,15 +23,13 @@ class TestJsonResponse extends TestCase
             ])
             ->create();
 
-        $this->assertInstanceOf(Response::class, $res);
+        static::assertInstanceOf(Response::class, $res);
 
-        $result = JsonResponse::fromObject(
-            json_decode($res->getBody()->__toString()),
-        );
+        $result = JsonResponse::fromObject(json_decode($res->getBody()->__toString()));
 
-        $this->assertSame(true, $result->getSuccess());
+        static::assertTrue($result->getSuccess());
 
-        $this->assertSame($msg, $result->getData()->message);
+        static::assertSame($msg, $result->getData()->message);
     }
 
     public function testFailure(): void
@@ -47,20 +45,18 @@ class TestJsonResponse extends TestCase
             ->addError($err)
             ->create();
 
-        $this->assertInstanceOf(Response::class, $res);
+        static::assertInstanceOf(Response::class, $res);
 
-        $result = JsonResponse::fromObject(
-            json_decode($res->getBody()->__toString()),
-        );
+        $result = JsonResponse::fromObject(json_decode($res->getBody()->__toString()));
 
-        $this->assertSame(false, $result->getSuccess());
+        static::assertFalse($result->getSuccess());
 
         $resultErr = $result->getError();
 
-        $this->assertSame($key, $resultErr->getCode());
+        static::assertSame($key, $resultErr->getCode());
 
-        $this->assertSame([$key], $resultErr->getPath());
+        static::assertSame([$key], $resultErr->getPath());
 
-        $this->assertSame($key, $resultErr->getMessage());
+        static::assertSame($key, $resultErr->getMessage());
     }
 }
