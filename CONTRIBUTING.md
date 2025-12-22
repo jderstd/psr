@@ -38,6 +38,14 @@ This command will do linting, formatting and testing.
 just
 ```
 
+### Formatting
+
+This command will format the code.
+
+```sh
+just fmt
+```
+
 ### Linting
 
 This command will lint the code.
@@ -46,12 +54,12 @@ This command will lint the code.
 just lint
 ```
 
-### Formatting
+### Analyzing
 
-This command will format the code.
+This command will analyze the code.
 
 ```sh
-just fmt
+just analyze
 ```
 
 ### Testing
