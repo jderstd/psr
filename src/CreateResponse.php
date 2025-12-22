@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Jder\Psr;
 
-use Psr\Http\Message\StreamInterface as Stream;
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Base\CreateResponseBase;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\StreamInterface as Stream;
 
 /**
  * Function to create response.

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json\Functions\Base;
 
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Base\CreateResponseBase;
 use Jder\Psr\Json\JsonResponse;
+use Psr\Http\Message\ResponseInterface as Response;
 
 const FAILURE_RESPONSE_DEFAULT = "{\"success\":false,\"data\":null,\"errors\":[{\"code\":\"server\",\"path\":[],\"message\":\"Internal server error.\"}]}";
 

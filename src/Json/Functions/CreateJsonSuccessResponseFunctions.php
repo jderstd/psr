@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json\Functions;
 
-use Psr\Http\Message\ResponseInterface as Response;
 use Jder\Psr\Json\Functions\Base\CreateJsonResponseFunctionBase;
+use Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * @api

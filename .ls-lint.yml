@@ -10,5 +10,4 @@ ignore:
     - "**/__MACOSX"
     - .DS_Store
     - "**/.DS_Store"
-    - node_modules
     - vendor
