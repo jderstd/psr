@@ -31,7 +31,7 @@
     "require-dev": {
         "nyholm/psr7": "^1.8.2",
         "nyholm/psr7-server": "^1.1.0",
-        "phpunit/phpunit": "^12.5.3",
+        "phpunit/phpunit": "^12.5.4",
         "slim/slim": "^4.15.1",
         "carthage-software/mago": "^1.0.1"
     },
