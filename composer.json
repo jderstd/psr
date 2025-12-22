@@ -31,15 +31,18 @@
     "require-dev": {
         "nyholm/psr7": "^1.8.2",
         "nyholm/psr7-server": "^1.1.0",
-        "phpstan/phpstan": "^2.1.33",
         "phpunit/phpunit": "^12.5.3",
         "slim/slim": "^4.15.1",
-        "squizlabs/php_codesniffer": "^4.0.1",
-        "vimeo/psalm": "^6.14.2"
+        "carthage-software/mago": "^1.0.1"
     },
     "autoload": {
         "psr-4": {
             "Jder\\Psr\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "carthage-software/mago": true
         }
     }
 }

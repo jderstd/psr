@@ -16,9 +16,4 @@
 /composer.lock export-ignore
 /CONTRIBUTING.md export-ignore
 /justfile export-ignore
-/package.json export-ignore
-/phpcs.xml.dist export-ignore
-/phpstan.neon.dist export-ignore
-/pnpm-lock.yaml export-ignore
-/prettier.config.ts export-ignore
-/psalm.xml export-ignore
+/mago.toml export-ignore
