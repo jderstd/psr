@@ -34,11 +34,11 @@ fmt:
 lint:
     ls-lint
     typos
-    ./{{mago}} lint --fix
+    ./{{mago}} lint --unsafe --fix
 
 # Analyze code
 analyze:
-    ./{{mago}} analyze --fix
+    ./{{mago}} analyze --unsafe --fix
 
 # Run tests
 test:
