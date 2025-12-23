@@ -63,11 +63,11 @@ array-style = { enabled = true }
 assertion-style = { enabled = true } # PHPUnit
 block-statement = { enabled = false }
 braced-string-interpolation = { enabled = true }
-class-name = { enabled = true }
+class-name = { enabled = true, psr = true }
 constant-name = { enabled = true }
 enum-name = { enabled = true }
 function-name = { enabled = true }
-interface-name = { enabled = true }
+interface-name = { enabled = true, psr = true }
 lowercase-keyword = { enabled = true }
 lowercase-type-hint = { enabled = true }
 no-alias-function = { enabled = true }
@@ -75,7 +75,7 @@ no-hash-comment = { enabled = true }
 no-php-tag-terminator = { enabled = true }
 no-trailing-space = { enabled = true }
 property-name = { enabled = true }
-trait-name = { enabled = true }
+trait-name = { enabled = true, psr = true }
 variable-name = { enabled = true }
 
 # Correctness
