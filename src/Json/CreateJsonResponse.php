@@ -10,8 +10,6 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * Function to create JSON response.
- *
- * @api
  */
 class CreateJsonResponse
 {

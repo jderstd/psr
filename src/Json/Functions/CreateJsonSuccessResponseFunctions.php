@@ -8,7 +8,7 @@ use Jder\Psr\Json\Functions\Base\CreateJsonResponseFunctionBase;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
- * @api
+ * Functions to create success response in JSON.
  */
 class CreateJsonSuccessResponseFunctions extends CreateJsonResponseFunctionBase
 {

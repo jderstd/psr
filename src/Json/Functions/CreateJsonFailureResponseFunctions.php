@@ -9,7 +9,7 @@ use Jder\Psr\Json\JsonResponseError;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
- * @api
+ * Functions to create failure response in JSON.
  */
 class CreateJsonFailureResponseFunctions extends CreateJsonResponseFunctionBase
 {

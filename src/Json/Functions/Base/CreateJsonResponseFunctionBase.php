@@ -11,7 +11,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 const FAILURE_RESPONSE_DEFAULT = "{\"success\":false,\"data\":null,\"errors\":[{\"code\":\"server\",\"path\":[],\"message\":\"Internal server error.\"}]}";
 
 /**
- * @api
+ * Base functions to create JSON response.
  */
 class CreateJsonResponseFunctionBase extends CreateResponseBase
 {

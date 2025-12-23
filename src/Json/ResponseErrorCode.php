@@ -6,8 +6,6 @@ namespace Jder\Psr\Json;
 
 /**
  * Response error code.
- *
- * @api
  */
 enum ResponseErrorCode: string
 {

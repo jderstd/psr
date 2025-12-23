@@ -7,7 +7,7 @@ namespace Jder\Psr\Base;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
- * @api
+ * Base class to create response.
  */
 class CreateResponseBase
 {

@@ -11,8 +11,6 @@ use Override;
 
 /**
  * JSON response error.
- *
- * @api
  */
 class JsonResponseError implements JsonSerializable
 {

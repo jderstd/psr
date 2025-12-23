@@ -11,8 +11,6 @@ use Override;
 
 /**
  * JSON response.
- *
- * @api
  */
 class JsonResponse implements JsonSerializable
 {

@@ -10,8 +10,6 @@ use Psr\Http\Message\StreamInterface as Stream;
 
 /**
  * Function to create response.
- *
- * @api
  */
 class CreateResponse extends CreateResponseBase
 {
