@@ -16,16 +16,3 @@ updates:
       ignore:
           - dependency-name: "php"
           - dependency-name: "psr/http-message"
-    # JS/TS
-    - package-ecosystem: "npm"
-      directory: "/"
-      schedule:
-          interval: "daily"
-          time: "00:00"
-          timezone: "Etc/UTC"
-      cooldown:
-          default-days: 1
-          include:
-              - "*"
-      commit-message:
-          prefix: "chore"
