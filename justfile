@@ -21,10 +21,9 @@ _:
 i:
     {{composer}} install
 
-# Setup the project
-setup:
-    brew install ls-lint typos-cli
-    just i
+# Update dependencies
+up:
+    {{composer}} update
 
 # Format code
 fmt:
