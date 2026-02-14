@@ -80,17 +80,12 @@ variable-name = { enabled = true }
 
 # Correctness
 assert-description = { enabled = true }
-constant-type = { enabled = true }
 identity-comparison = { enabled = true }
 ineffective-format-ignore-next = { enabled = true }
 ineffective-format-ignore-region = { enabled = true }
 invalid-open-tag = { enabled = true }
 no-assign-in-condition = { enabled = true }
-no-boolean-literal-comparison = { enabled = false }
 no-empty-catch-clause = { enabled = true }
-parameter-type = { enabled = true }
-property-type = { enabled = true }
-return-type = { enabled = true }
 strict-assertions = { enabled = true } # PHPUnit
 strict-behavior = { enabled = true }
 strict-types = { enabled = true }
@@ -181,3 +176,5 @@ register-super-globals = true
 trust-existence-checks = false
 check-property-initialization = true
 check-use-statements = true
+enforce-class-finality = false
+require-api-or-internal = false
