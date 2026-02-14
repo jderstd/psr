@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Jder\Psr\Json;
 
 use InvalidArgumentException;
-use Jder\Psr\Json\JsonResponseError;
 use JsonSerializable;
 use Override;
 
