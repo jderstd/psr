@@ -1,5 +1,5 @@
 set shell := ["bash", "-cu"]
-set windows-shell := ["powershell"]
+set windows-shell := ["pwsh", "-Command"]
 
 composer := "$(which composer.phar)"
 
@@ -31,7 +31,7 @@ fmt:
 
 # Lint code
 lint:
-    ls-lint
+    ls-lint -config ./.ls-lint.yaml
     typos
     ./{{mago}} lint --unsafe --fix
 
