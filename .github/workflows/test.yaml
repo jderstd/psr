@@ -42,5 +42,8 @@ jobs:
                   php-version: ${{ matrix.php }}
                   tools: composer
 
+            - name: Install dependencies
+              run: composer install
+
             - name: Run tests
               run: just test

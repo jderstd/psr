@@ -22,6 +22,9 @@ jobs:
                   php-version: 8.1
                   tools: composer
 
+            - name: Install dependencies
+              run: composer install
+
             - name: Install ls-lint
               run: brew install ls-lint
 
@@ -48,6 +51,9 @@ jobs:
               with:
                   php-version: 8.1
                   tools: composer
+
+            - name: Install dependencies
+              run: composer install
 
             - name: Run analyzers
               run: just analyze
