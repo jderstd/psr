@@ -1,0 +1,53 @@
+name: Code Quality
+
+on:
+    pull_request:
+    push:
+
+jobs:
+    lint:
+        name: Lint
+        runs-on: macos-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install just
+              uses: extractions/setup-just@v3
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.1
+                  tools: composer
+
+            - name: Install ls-lint
+              run: brew install ls-lint
+
+            - name: Install typos-cli
+              run: brew install typos-cli
+
+            - name: Run linters
+              run: just lint
+
+    analyze:
+        name: Analyze
+        needs: lint
+        runs-on: macos-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install just
+              uses: extractions/setup-just@v3
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.1
+                  tools: composer
+
+            - name: Run analyzers
+              run: just analyze
