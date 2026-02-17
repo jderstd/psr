@@ -45,11 +45,11 @@ test:
 
 # Start example server
 example:
-    php -S localhost:4001 ./{{example_php}}
+    php -S localhost:3001 ./{{example_php}}
 
 # Start Slim example server
 example-slim:
-    php -S localhost:4001 ./{{example_slim}}
+    php -S localhost:3001 ./{{example_slim}}
 
 # Clean modules
 clean:
