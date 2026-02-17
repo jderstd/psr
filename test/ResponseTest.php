@@ -9,7 +9,7 @@ use Nyholm\Psr7\Response as MockResponse;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface as Response;
 
-class TestResponse extends TestCase
+class ResponseTest extends TestCase
 {
     public function testDefault(): void
     {

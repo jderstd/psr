@@ -41,7 +41,7 @@ analyze:
 
 # Run tests
 test:
-    ./{{phpunit}} ./test/*
+    ./{{phpunit}} test
 
 # Start example server
 example:

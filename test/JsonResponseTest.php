@@ -11,7 +11,7 @@ use Nyholm\Psr7\Response as MockResponse;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface as Response;
 
-class TestJsonResponse extends TestCase
+class JsonResponseTest extends TestCase
 {
     public function testSuccess(): void
     {
