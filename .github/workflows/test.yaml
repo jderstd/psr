@@ -10,7 +10,7 @@ on:
 
 jobs:
     node:
-        name: ${{ matrix.os.name }} / PHP ${{ matrix.node }}
+        name: ${{ matrix.os.name }} / PHP ${{ matrix.php }}
         runs-on: ${{ matrix.os.code }}
 
         strategy:
