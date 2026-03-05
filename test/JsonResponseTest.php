@@ -25,7 +25,9 @@ class JsonResponseTest extends TestCase
 
         static::assertInstanceOf(Response::class, $res);
 
-        $result = JsonResponse::fromObject(json_decode($res->getBody()->__toString()));
+        $result = JsonResponse::fromObject(
+            json_decode($res->getBody()->__toString()),
+        );
 
         static::assertTrue($result->getSuccess());
 
@@ -47,7 +49,9 @@ class JsonResponseTest extends TestCase
 
         static::assertInstanceOf(Response::class, $res);
 
-        $result = JsonResponse::fromObject(json_decode($res->getBody()->__toString()));
+        $result = JsonResponse::fromObject(
+            json_decode($res->getBody()->__toString()),
+        );
 
         static::assertFalse($result->getSuccess());
 
