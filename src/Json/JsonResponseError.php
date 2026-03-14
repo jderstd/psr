@@ -22,7 +22,7 @@ class JsonResponseError implements JsonSerializable
 
     final public function __construct()
     {
-        $this->code = ResponseErrorCode::Unknown->value;
+        $this->code = ResponseError::Unknown->value;
         $this->path = [];
         $this->message = null;
     }

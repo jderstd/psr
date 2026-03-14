@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json;
 
-use Jder\Psr\Json\Functions\CreateJsonFailureResponseFunctions;
-use Jder\Psr\Json\Functions\CreateJsonSuccessResponseFunctions;
+use Jder\Psr\Json\Functions\CreateFailureJsonResponseFunctions;
+use Jder\Psr\Json\Functions\CreateSuccessJsonResponseFunctions;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
@@ -16,16 +16,16 @@ class CreateJsonResponse
     /**
      * Create a success JSON response.
      */
-    public static function success(Response $response): CreateJsonSuccessResponseFunctions
+    public static function success(Response $response): CreateSuccessJsonResponseFunctions
     {
-        return new CreateJsonSuccessResponseFunctions($response);
+        return new CreateSuccessJsonResponseFunctions($response);
     }
 
     /**
      * Create a failure JSON response.
      */
-    public static function failure(Response $response): CreateJsonFailureResponseFunctions
+    public static function failure(Response $response): CreateFailureJsonResponseFunctions
     {
-        return new CreateJsonFailureResponseFunctions($response);
+        return new CreateFailureJsonResponseFunctions($response);
     }
 }

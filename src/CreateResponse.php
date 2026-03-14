@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Jder\Psr;
 
-use Jder\Psr\Base\CreateResponseBase;
+use Jder\Psr\Base\CreateBaseResponse;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\StreamInterface as Stream;
 
 /**
  * Function to create response.
  */
-class CreateResponse extends CreateResponseBase
+class CreateResponse extends CreateBaseResponse
 {
     /** @var string|Stream */
     protected mixed $body;

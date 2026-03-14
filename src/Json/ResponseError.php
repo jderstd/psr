@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Jder\Psr\Json;
 
 /**
- * Response error code.
+ * Response error.
  */
-enum ResponseErrorCode: string
+enum ResponseError: string
 {
     /**
      * Internal server error.

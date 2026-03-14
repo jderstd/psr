@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json\Functions;
 
-use Jder\Psr\Json\Functions\Base\CreateJsonResponseFunctionBase;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * Functions to create success response in JSON.
  */
-class CreateJsonSuccessResponseFunctions extends CreateJsonResponseFunctionBase
+class CreateSuccessJsonResponseFunctions extends CreateBaseJsonResponseFunctions
 {
     public function __construct(Response $response)
     {

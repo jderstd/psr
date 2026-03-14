@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 /**
  * Base class to create response.
  */
-class CreateResponseBase
+class CreateBaseResponse
 {
     protected int $status;
 

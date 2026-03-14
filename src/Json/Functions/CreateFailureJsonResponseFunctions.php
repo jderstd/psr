@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json\Functions;
 
-use Jder\Psr\Json\Functions\Base\CreateJsonResponseFunctionBase;
 use Jder\Psr\Json\JsonResponseError;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * Functions to create failure response in JSON.
  */
-class CreateJsonFailureResponseFunctions extends CreateJsonResponseFunctionBase
+class CreateFailureJsonResponseFunctions extends CreateBaseJsonResponseFunctions
 {
     public function __construct(Response $response)
     {

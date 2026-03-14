@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Jder\Psr\Json\Functions\Base;
+namespace Jder\Psr\Json\Functions;
 
-use Jder\Psr\Base\CreateResponseBase;
+use Jder\Psr\Base\CreateBaseResponse;
 use Jder\Psr\Json\JsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
 
@@ -13,7 +13,7 @@ const FAILURE_RESPONSE_DEFAULT = "{\"success\":false,\"data\":null,\"errors\":[{
 /**
  * Base functions to create JSON response.
  */
-class CreateJsonResponseFunctionBase extends CreateResponseBase
+class CreateBaseJsonResponseFunctions extends CreateBaseResponse
 {
     protected JsonResponse $json;
 
