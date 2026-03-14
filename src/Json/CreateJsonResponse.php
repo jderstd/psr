@@ -13,11 +13,17 @@ use Psr\Http\Message\ResponseInterface as Response;
  */
 class CreateJsonResponse
 {
+    /**
+     * Create a success JSON response.
+     */
     public static function success(Response $response): CreateJsonSuccessResponseFunctions
     {
         return new CreateJsonSuccessResponseFunctions($response);
     }
 
+    /**
+     * Create a failure JSON response.
+     */
     public static function failure(Response $response): CreateJsonFailureResponseFunctions
     {
         return new CreateJsonFailureResponseFunctions($response);
