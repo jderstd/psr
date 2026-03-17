@@ -7,9 +7,9 @@ namespace Jder\Psr\Json\Functions;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
- * Functions to create success response in JSON.
+ * Create a success JSON response.
  */
-class CreateSuccessJsonResponseFunctions extends CreateBaseJsonResponseFunctions
+class CreateSuccessJsonResponse extends CreateBaseJsonResponse
 {
     public function __construct(Response $response)
     {

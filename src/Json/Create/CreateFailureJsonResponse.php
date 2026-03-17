@@ -8,9 +8,9 @@ use Jder\Psr\Json\JsonResponseError;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
- * Functions to create failure response in JSON.
+ * Create a failure JSON response.
  */
-class CreateFailureJsonResponseFunctions extends CreateBaseJsonResponseFunctions
+class CreateFailureJsonResponse extends CreateBaseJsonResponse
 {
     public function __construct(Response $response)
     {
