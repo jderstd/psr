@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Jder\Psr\Json;
 
-use Jder\Psr\Json\Functions\CreateFailureJsonResponse;
-use Jder\Psr\Json\Functions\CreateSuccessJsonResponse;
+use Jder\Psr\Json\Create\CreateFailureJsonResponse;
+use Jder\Psr\Json\Create\CreateSuccessJsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**

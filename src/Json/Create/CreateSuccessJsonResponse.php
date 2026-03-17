@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jder\Psr\Json\Functions;
+namespace Jder\Psr\Json\Create;
 
 use Psr\Http\Message\ResponseInterface as Response;
 
