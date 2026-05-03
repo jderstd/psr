@@ -30,14 +30,6 @@ This command will install Node.js and PHP dependencies.
 just i
 ```
 
-### Default Command
-
-This command will do linting, formatting and testing.
-
-```sh
-just
-```
-
 ### Formatting
 
 This command will format the code.
@@ -68,6 +60,14 @@ This command will run all tests.
 
 ```sh
 just test
+```
+
+### Checking
+
+This command will do linting, formatting and testing.
+
+```sh
+just check
 ```
 
 ### Cleaning

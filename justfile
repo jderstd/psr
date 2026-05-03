@@ -12,10 +12,7 @@ example_slim := "examples/slim/index.php"
 
 # Default action
 _:
-    just fmt
-    just lint
-    just analyze
-    just test
+    just --list -u
 
 # Install dependencies
 i:
@@ -43,6 +40,13 @@ analyze:
 test:
     ./{{phpunit}} test
 
+# Check code
+check:
+    just fmt
+    just lint
+    just analyze
+    just test
+
 # Start example server
 example:
     php -S localhost:3001 ./{{example_php}}
@@ -51,7 +55,18 @@ example:
 example-slim:
     php -S localhost:3001 ./{{example_slim}}
 
-# Clean modules
-clean:
-    rm -rf ./node_modules
+# Clean builds (Linux)
+clean-linux:
     rm -rf ./vendor
+
+# Clean builds (macOS)
+clean-macos:
+    just clean-linux
+
+# Clean builds (Windows)
+clean-windows:
+    Remove-Item -Recurse -Force ./vendor
+
+# Clean builds
+clean:
+    just clean-{{os()}}
