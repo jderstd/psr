@@ -1,3 +1,9 @@
+## Next
+
+### Breaking Changes
+
+- require PHP 8.4.1 or higher
+
 ## 0.2.0 (2026-03-18)
 
 ### Breaking Changes
