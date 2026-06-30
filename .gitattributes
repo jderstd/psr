@@ -10,7 +10,7 @@
 # Excluded files from Packagist
 /.gitattributes export-ignore
 /.gitignore export-ignore
-/.ls-lint.yml export-ignore
+/.ls-lint.yaml export-ignore
 /.typos.toml export-ignore
 /CHANGELOG.md export-ignore
 /composer.lock export-ignore
