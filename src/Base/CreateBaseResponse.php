@@ -71,10 +71,10 @@ class CreateBaseResponse
     public function addHeaders(array $headers): static
     {
         foreach ($headers as $name => $values) {
-            $this->headers[$name] = array_merge(
-                $this->headers[$name] ?? [],
-                (array) $values,
-            );
+            $this->headers[$name] = [
+                ...($this->headers[$name] ?? []),
+                ...((array) $values),
+            ];
         }
 
         return $this;

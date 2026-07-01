@@ -58,7 +58,7 @@ class JsonResponse implements JsonSerializable
             }
         }
 
-        return (new static())
+        return new static()
             ->setSuccess($success)
             ->setData($data)
             ->addErrors($errors);

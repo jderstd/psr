@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46c2bfed1ca7f2d444ff922085a0dfe8",
+    "content-hash": "a7255535de3f95fd345cefbda96cc647",
     "packages": [
         {
             "name": "psr/http-message",
@@ -61,6 +61,49 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "alpheus/mago",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alpheuscfg/mago.git",
+                "reference": "759b9031fa061f5280436bd6fadd22db919b909e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alpheuscfg/mago/zipball/759b9031fa061f5280436bd6fadd22db919b909e",
+                "reference": "759b9031fa061f5280436bd6fadd22db919b909e",
+                "shasum": ""
+            },
+            "require-dev": {
+                "carthage-software/mago": "1.42.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alpheus",
+                    "email": "contact@alphe.us"
+                }
+            ],
+            "description": "A shareable Mago configuration",
+            "homepage": "https://github.com/alpheuscfg/mago",
+            "keywords": [
+                "config",
+                "configuration",
+                "mago",
+                "php"
+            ],
+            "support": {
+                "docs": "https://github.com/alpheuscfg/mago/blob/main/docs/README.md",
+                "issues": "https://github.com/alpheuscfg/mago/issues",
+                "source": "https://github.com/alpheuscfg/mago"
+            },
+            "time": "2026-07-01T10:55:19+00:00"
+        },
         {
             "name": "carthage-software/mago",
             "version": "1.42.0",

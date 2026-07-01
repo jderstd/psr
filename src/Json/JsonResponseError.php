@@ -90,7 +90,7 @@ class JsonResponseError implements JsonSerializable
             $message = $json->message;
         }
 
-        return (new static())
+        return new static()
             ->setCode($code)
             ->setPath($path)
             ->setMessage($message);

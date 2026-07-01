@@ -29,11 +29,12 @@
         "psr/http-message": "^2.0.0"
     },
     "require-dev": {
+        "alpheus/mago": "~0.1.0",
+        "carthage-software/mago": "^1.42.0",
         "nyholm/psr7": "^1.8.2",
         "nyholm/psr7-server": "^1.1.0",
         "phpunit/phpunit": "^13.1.8",
-        "slim/slim": "^4.15.1",
-        "carthage-software/mago": "^1.25.2"
+        "slim/slim": "^4.15.1"
     },
     "autoload": {
         "psr-4": {
