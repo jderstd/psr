@@ -106,16 +106,16 @@
         },
         {
             "name": "carthage-software/mago",
-            "version": "1.55.0",
+            "version": "1.56.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "2487de2818449cab3b7fde26be7b00d3a63f6a61"
+                "reference": "1993be090f12ea01d8c5715154659d7e75affe25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/2487de2818449cab3b7fde26be7b00d3a63f6a61",
-                "reference": "2487de2818449cab3b7fde26be7b00d3a63f6a61",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/1993be090f12ea01d8c5715154659d7e75affe25",
+                "reference": "1993be090f12ea01d8c5715154659d7e75affe25",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.55.0"
+                "source": "https://github.com/carthage-software/mago/tree/1.56.3"
             },
             "funding": [
                 {
@@ -165,7 +165,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-09T22:43:14+00:00"
+            "time": "2026-10-12T07:31:58+00:00"
         },
         {
             "name": "myclabs/deep-copy",
